@@ -7,6 +7,7 @@ import { motion } from 'motion/react';import {
   Trophy,
   ChevronRight
 } from 'lucide-react';
+import { assets } from '../assets/assets';
 
 const AboutSection = () => {
   return (
@@ -20,7 +21,7 @@ const AboutSection = () => {
         >
           <div className="absolute -inset-4 border-2 border-neon-green opacity-20 rounded-sm" />
           <img
-          src='/src/assets/gym-trainer.jpg'
+          src={assets.gym_trainer}
           alt="Trainer"
             className="w-full h-full object-cover rounded-sm grayscale relative z-10"
           />
