@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-neon-green: #C6FF00;
+  --color-neon-green-glow: #9EFF00;
+  --color-deep-black: #0A0A0A;
+  --color-soft-black: #111111;
+  --color-card-black: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-deep-black text-white font-sans antialiased;
+  }
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(198, 255, 0, 0.4);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(198, 255, 0, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-deep-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neon-green;
+}
