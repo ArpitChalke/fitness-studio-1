@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
-
+import { useEffect, useState } from 'react';
 import ScrollProgress from './components/ScrollProgress';
 import DemoNoticeBar from './components/DemoNoticeBar';
 import Navbar from './components/Navbar';
@@ -15,9 +15,23 @@ import StatsSection from './components/StatsSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
-
+import Loading from './components/Loading';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className="overflow-x-hidden selection:bg-neon-green selection:text-black">
       <ScrollProgress />
